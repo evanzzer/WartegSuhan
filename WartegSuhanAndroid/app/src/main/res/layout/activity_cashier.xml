@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    tools:context=".ui.CashierActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutCustomerID"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/customer_id"
+        app:endIconDrawable="@drawable/ic_baseline_search_24"
+        app:endIconMode="custom"
+        app:errorIconDrawable="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etCustomerID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNewCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:text="@string/create"
+        app:layout_constraintStart_toEndOf="@+id/layoutCustomerID"
+        app:layout_constraintTop_toTopOf="@id/layoutCustomerID"
+        app:layout_constraintBottom_toBottomOf="@id/layoutCustomerID"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/menu_name"
+        app:layout_constraintTop_toBottomOf="@id/layoutCustomerID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:endIconDrawable="@drawable/ic_baseline_search_24"
+        app:endIconMode="custom"
+        app:errorIconDrawable="@null"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutStock"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:hint="@string/qty"
+        app:layout_constraintTop_toBottomOf="@id/layoutMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etStock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:selectAllOnFocus="true"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutHarga"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8sp"
+        android:layout_marginStart="8sp"
+        android:hint="@string/harga"
+        app:prefixText="Rp"
+        app:suffixText=",00"
+        app:layout_constraintTop_toBottomOf="@id/layoutMenu"
+        app:layout_constraintStart_toEndOf="@id/layoutStock"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CurrencyEditText
+            android:id="@+id/etHarga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:selectAllOnFocus="true"
+            android:clickable="false"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:text="@string/checkout"
+        app:icon="@drawable/ic_baseline_payments_24"
+        app:layout_constraintTop_toBottomOf="@id/layoutHarga"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/lblTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="@string/total"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnCount"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp0,00"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/lblTotal"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24sp"
+        android:text="@string/place_order"
+        android:visibility="gone"
+        app:icon="@drawable/ic_baseline_payments_24"
+        app:layout_constraintTop_toBottomOf="@id/tvTotal"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

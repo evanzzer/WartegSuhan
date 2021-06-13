@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    tools:context=".ui.MenuActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/url"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.netlab.suhan.utils.CustomEditText
+            android:id="@+id/etURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:inputType="textUri"
+            android:selectAllOnFocus="true"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:text="@string/edit"
+        app:icon="@drawable/ic_baseline_edit_24"
+        app:layout_constraintTop_toBottomOf="@id/layoutURL"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:backgroundTint="#57b877"
+        android:text="@string/save"
+        android:visibility="invisible"
+        app:icon="@drawable/ic_baseline_save_24"
+        app:layout_constraintTop_toBottomOf="@id/layoutURL"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnListStock"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        android:padding="20sp"
+        android:text="@string/list_stock"
+        app:icon="@drawable/ic_baseline_list_alt_24"
+        app:iconGravity="textTop"
+        app:iconPadding="12sp"
+        app:iconSize="64sp"
+        app:layout_constraintTop_toBottomOf="@id/btnSaveURL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCashier"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_max="256sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnListCustomer"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        android:padding="20sp"
+        android:text="@string/list_pembeli"
+        app:icon="@drawable/ic_baseline_group_24"
+        app:iconGravity="textTop"
+        app:iconPadding="12sp"
+        app:iconSize="64sp"
+        app:layout_constraintTop_toBottomOf="@id/btnListStock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnTopUp"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_max="256sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOrderHistory"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        android:text="@string/riwayat_transaksi"
+        app:icon="@drawable/ic_baseline_history_24"
+        app:iconGravity="textTop"
+        app:iconPadding="12sp"
+        app:iconSize="64sp"
+        app:layout_constraintTop_toBottomOf="@id/btnListCustomer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_max="192sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCashier"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        android:padding="20sp"
+        android:text="@string/kasir"
+        app:icon="@drawable/ic_baseline_cashier_24"
+        app:iconGravity="textTop"
+        app:iconPadding="12sp"
+        app:iconSize="64sp"
+        app:layout_constraintTop_toTopOf="@id/btnListStock"
+        app:layout_constraintBottom_toTopOf="@id/btnTopUp"
+        app:layout_constraintStart_toEndOf="@id/btnListStock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_max="256sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnTopUp"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:layout_margin="16sp"
+        android:padding="20sp"
+        android:text="@string/top_up"
+        app:icon="@drawable/ic_baseline_monetization_on_24"
+        app:iconGravity="textTop"
+        app:iconPadding="12sp"
+        app:iconSize="64sp"
+        app:layout_constraintTop_toBottomOf="@id/btnCashier"
+        app:layout_constraintStart_toEndOf="@id/btnListCustomer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_max="256sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
